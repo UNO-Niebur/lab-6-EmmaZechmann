@@ -1,18 +1,23 @@
 #DiceRoll.py
-#Name:
-#Date:
-#Assignment:
+#Name: Emma Zechmann
+#Date: 3/1/2026
+#Assignment:Dice roll 
 import random
 
 def main():
-  #Create an empty list with possible roll values
   rolls = [0,0,0,0,0,0,0,0,0,0,0,0]
-  #Create two dice values ranging from 1 - 6 each
-  
-  #find the sum total of the two dice
-  
-  #print statictics for dice rolls
+  num_rolls = 1000
 
+  for i in range(num_rolls):
+    die1= random.randint(1,6)
+    die2= random.randint(1,6)
+
+    total = die1 + die2
+    rolls[total-2] +=1
+
+  print("Sum Count")
+  for i in range(len(rolls)):
+    print(i+2,"", rolls[i])
 
 if __name__ == '__main__':
   main()
