@@ -6,7 +6,7 @@ import random
 
 def main():
   rolls = [0,0,0,0,0,0,0,0,0,0,0,0]
-  num_rolls = 1000
+  num_rolls = 10000
 
   for i in range(num_rolls):
     die1= random.randint(1,6)
@@ -15,9 +15,12 @@ def main():
     total = die1 + die2
     rolls[total-2] +=1
 
-  print("Sum Count")
+  print("Sum Count percent")
   for i in range(len(rolls)):
-    print(i+2,"", rolls[i])
+    count = rolls[i]
+    percent = (count/ num_rolls)*100
+    print(i+2,"",count,"", f"{percent:.2f}%")
+
 
 if __name__ == '__main__':
   main()
